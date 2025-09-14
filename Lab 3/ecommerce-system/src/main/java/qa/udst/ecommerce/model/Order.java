@@ -14,6 +14,7 @@ public class Order {
     public double getTotalPrice() {
         return totalPrice;
     }
+
     private int orderId;
     private ArrayList<BaseProduct> products = new ArrayList<>();
     private double totalPrice;

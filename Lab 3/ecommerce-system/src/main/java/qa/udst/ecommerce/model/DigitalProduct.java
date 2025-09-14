@@ -12,7 +12,8 @@ public class DigitalProduct extends BaseProduct {
     @Override
     public void displayInfo() {
         System.out.println("Digital Product:");
-        System.out.println("Product: ID: " + this.getId() + ", Name: " + this.getName() + ", Price: $" + this.getPrice());
+        System.out
+                .println("Product: ID: " + this.getId() + ", Name: " + this.getName() + ", Price: $" + this.getPrice());
         System.out.println("URL: " + this.url);
     }
 

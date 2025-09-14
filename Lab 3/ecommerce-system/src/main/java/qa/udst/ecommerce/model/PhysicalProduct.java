@@ -16,14 +16,15 @@ public class PhysicalProduct extends BaseProduct implements Shippable {
     public void setWeight(double weight) {
         if (weight < 0) {
             System.out.println("Weight cannot be negative");
-            }
+        }
         this.weight = weight;
     }
 
     @Override
     public void displayInfo() {
         System.out.println("Physical Product:");
-        System.out.println("Product: ID: " + this.getId() + ", Name: " + this.getName() + ", Price: $" + this.getPrice());
+        System.out
+                .println("Product: ID: " + this.getId() + ", Name: " + this.getName() + ", Price: $" + this.getPrice());
         System.out.println("Weight: " + this.weight + " kg");
     }
 
@@ -38,7 +39,7 @@ public class PhysicalProduct extends BaseProduct implements Shippable {
     }
 
     @Override
-    public String generateTrackingNumber(){
+    public String generateTrackingNumber() {
         return "TRACK-" + getId();
     }
 

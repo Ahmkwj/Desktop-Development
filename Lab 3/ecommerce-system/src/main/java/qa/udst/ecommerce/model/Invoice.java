@@ -9,6 +9,17 @@ package qa.udst.ecommerce.model;
 import java.util.Date;
 
 public class Invoice {
+
+    private int invoiceId;
+    private Order order;
+    private Date date;
+
+    public Invoice(int invoiceId, Order order, Date date) {
+        this.invoiceId = invoiceId;
+        this.order = order;
+        this.date = date;
+    }
+
     public int getInvoiceId() {
         return invoiceId;
     }
@@ -19,15 +30,6 @@ public class Invoice {
 
     public Order getOrder() {
         return order;
-    }
-    private int invoiceId;
-    private Order order;
-    private Date date;
-
-    public Invoice(int invoiceId, Order order, Date date) {
-        this.invoiceId = invoiceId;
-        this.order = order;
-        this.date = date;
     }
 
     public void generateInvoice() {

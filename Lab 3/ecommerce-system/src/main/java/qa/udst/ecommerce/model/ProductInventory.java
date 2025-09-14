@@ -21,7 +21,7 @@ public class ProductInventory {
     public void addProduct(String id, BaseProduct product, ProductCategory category) {
         products.put(id, product);
         productCategories.put(id, category);
-        product.setCategory(category); 
+        product.setCategory(category);
     }
 
     public BaseProduct getProduct(String id) {

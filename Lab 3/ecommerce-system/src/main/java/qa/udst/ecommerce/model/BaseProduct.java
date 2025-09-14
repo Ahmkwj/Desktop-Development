@@ -16,6 +16,7 @@ public abstract class BaseProduct implements Product {
     public abstract void displayInfo();
 
     public abstract double calculateDiscount(double percentage);
+
     public int getId() {
         return id;
     }
@@ -38,8 +39,8 @@ public abstract class BaseProduct implements Product {
 
     public void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-            System.out.println("Name cannot be empty"); 
-       }
+            System.out.println("Name cannot be empty");
+        }
         this.name = name;
     }
 
@@ -54,7 +55,7 @@ public abstract class BaseProduct implements Product {
         this.price = price;
     }
 
-    public void displayDetails(){
+    public void displayDetails() {
         System.out.println("Product Details:");
         System.out.println("Name: " + getName());
         System.out.println("Price: $" + getPrice());
