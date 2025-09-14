@@ -1,0 +1,6 @@
+qa/udst/ecommerce/model/Product.class
+qa/udst/ecommerce/model/DigitalProduct.class
+qa/udst/ecommerce/model/BaseProduct.class
+qa/udst/ecommerce/model/PhysicalProduct.class
+qa/udst/ecommerce/model/Order.class
+qa/udst/ecommerce/model/Catalog.class
