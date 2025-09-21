@@ -22,44 +22,6 @@ public abstract class BaseProduct implements Product {
 
     public abstract double calculateDiscount(double percentage);
 
-    public int getId() {
-        return id;
-    }
-
-    public ProductCategory getCategory() {
-        return category;
-    }
-
-    public void setCategory(ProductCategory category) {
-        this.category = category;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            System.out.println("Name cannot be empty");
-        }
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        if (price < 0) {
-            System.out.println("Price cannot be negative");
-        }
-        this.price = price;
-    }
-
     public void displayDetails() {
         System.out.println("Product Details:");
         System.out.println("Name: " + getName());
