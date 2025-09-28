@@ -6,6 +6,6 @@
 
 package qa.udst.ecommerce.model;
 
-public class ProductCategory {
-
+public enum ProductCategory {
+    DIGITAL, PHYSICAL;
 }
