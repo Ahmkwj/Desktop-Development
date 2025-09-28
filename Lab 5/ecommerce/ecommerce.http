@@ -1,0 +1,51 @@
+@base = http://localhost:8080
+@products = {{base}}/api/products
+
+### GET all
+GET {{products}}
+
+### POST DIGITAL
+POST {{products}}
+Content-Type: application/json
+
+{
+  "type": "DIGITAL",
+  "name": "E-Book Clean Architecture",
+  "price": 19.90,
+  "category": "BOOKS",
+  "downloadUrl": "https://example.com/clean-arch.pdf"
+}
+
+### POST PHYSICAL
+POST {{products}}
+Content-Type: application/json
+
+{
+  "type": "PHYSICAL",
+  "name": "Mechanical Keyboard",
+  "price": 129.00,
+  "category": "ELECTRONICS",
+  "weightKg": 0.85,
+  "dimensions": "44x13x3cm"
+}
+
+### GET by id
+GET {{products}}/1
+
+### PUT update #1
+PUT {{products}}/1
+Content-Type: application/json
+
+{
+  "type": "DIGITAL",
+  "name": "E-Book Clean Architecture - 2nd Ed.",
+  "price": 24.90,
+  "category": "BOOKS",
+  "downloadUrl": "https://example.com/clean-arch-v2.pdf"
+}
+
+### Tracking #2
+GET {{products}}/2/tracking
+
+### DELETE #1
+DELETE {{products}}/1

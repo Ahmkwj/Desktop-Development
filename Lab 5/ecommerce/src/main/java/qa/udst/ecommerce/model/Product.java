@@ -6,11 +6,27 @@
 
 package qa.udst.ecommerce.model;
 
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Product {
+    @NotNull(message = "Product ID cannot be null")
     private Long id;
+
+    @NotNull(message = "Product name cannot be null")
+    @Size(min = 3, max = 100, message = "Product name must be between 3 and 100 characters")
     private String name;
+
+    @DecimalMin(value = "0.01", message = "Product price must be greater than 0")
     private double price;
+
+    @NotNull(message = "Product category cannot be null")
     private ProductCategory category;
+
+    // Default constructor for Jackson
+    public Product() {
+    }
 
     public Product(Long id, String name, double price, ProductCategory category) {
         this.id = id;
@@ -25,6 +41,7 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+
     }
 
     public String getName() {
@@ -49,6 +66,14 @@ public class Product {
 
     public void setCategory(ProductCategory category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Product [id=" + id + ", name=" + name + ", price=" + price + ", category=" + category + ", getId()="
+                + getId() + ", getName()=" + getName() + ", getPrice()=" + getPrice() + ", getCategory()="
+                + getCategory() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+                + super.toString() + "]";
     }
 
 }

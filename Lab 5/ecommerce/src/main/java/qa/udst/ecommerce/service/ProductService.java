@@ -10,14 +10,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
 import qa.udst.ecommerce.model.Product;
 
+@Service
 public class ProductService {
-    private Map<Long, Product> store;
-
-    public ProductService() {
-        this.store = new HashMap<>();
-    }
+    private Map<Long, Product> store = new HashMap<Long, Product>();
 
     public ProductService(Map<Long, Product> store) {
         this.store = store;
@@ -28,11 +27,7 @@ public class ProductService {
     }
 
     public Product findById(Long id) {
-        Product product = store.get(id);
-        if (product == null) {
-            throw new ProductNotFoundException(id);
-        }
-        return product;
+        return store.get(id);
     }
 
     public Product add(Product product) {
@@ -41,26 +36,12 @@ public class ProductService {
     }
 
     public Product update(Long id, Product product) {
-        if (!store.containsKey(id)) {
-            throw new ProductNotFoundException(id);
-        }
-        product.setId(id);
         store.put(id, product);
         return product;
     }
 
-    public void delete(Long id) {
-        if (!store.containsKey(id)) {
-            throw new ProductNotFoundException(id);
-        }
-        store.remove(id);
-    }
-
-    public Map<Long, Product> getStore() {
-        return store;
-    }
-
-    public void setStore(Map<Long, Product> store) {
-        this.store = store;
+    public Product delete(long id) {
+        Product product = store.remove(id);
+        return product;
     }
 }
